@@ -1,0 +1,26 @@
+{
+  "name": "javascript-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/Nina0295/javascript-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nina0295/javascript-action/issues"
+  },
+  "homepage": "https://github.com/Nina0295/javascript-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1",
+    "@octokit/rest": "^19.0.7",
+    "moment": "^2.29.4"
+  }
+}

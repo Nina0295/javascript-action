@@ -1,0 +1,47 @@
+name: Display GitHub Issues and Pull Requests
+description: Displays information about issues and pull requests for a GitHub repository
+inputs:
+  token:
+    description: 'The personal access token used to authenticate with the GitHub API'
+    required: true
+  owner-name:
+    description: 'The name of the repository owner'
+    required: true
+  repo-name:
+    description: 'The name of the repository'
+    required: true
+  start-date:
+    description: 'A start date to filter the issues and pull requests'
+    required: false
+    default: '2020-03-09T00:00:00Z'
+  end-date:
+    description: 'A end date to filter the issues and pull requests'
+    required: false
+    default: '2021-03-09T00:00:00Z'
+  action-name:
+    description: 'The name of the action in the actions organization on GitHub'
+    required: false
+outputs:
+  total-issues:
+    description: 'The total number of issues and pull requests'
+  open-issues:
+    description: 'The number of open issues and pull requests'
+  closed-issues:
+    description: 'The number of closed issues and pull requests'
+  last-month-issues:
+    description: 'The number of issues and pull requests created in the last month'
+  custom-date-for-issues:
+    description: 'The number of issues and pull requests created since the custom date'
+  total-pull-requests:
+    description: 'The total number of pull requests'
+  open-pull-requests:
+    description: 'The number of open pull requests'
+  closed-pull-requests:
+    description: 'The number of closed pull requests'
+  last-month-pull-requests:
+    description: 'The number of pull requests created in the last month'
+  custom-date-for-pull-requests:
+    description: 'The number of pull requests created since the custom date'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

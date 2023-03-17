@@ -1,0 +1,24 @@
+name: Test Display GitHub Pull Requests and Issues Action
+
+on: [push]
+
+jobs:
+  test-display-github-issues-and-pull-requests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display GitHub Pull Requests and Issues 
+        id: display-github-issues-and-pull-requests
+        uses: Nina0295/javascript-action@v1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          owner-name: "actions"
+          repo-name: "checkout"
+          start-date: "2022-02-24T00:00:00Z"
+          end-date: "2023-03-12T00:00:00Z"
+      - name: Show output
+        run: |
+          echo "The amount of PR/issues total: ${{ steps.display-github-issues-and-pull-requests.outputs.total-pull-requests }} / ${{ steps.display-github-issues-and-pull-requests.outputs.total-issues }}"
+          echo "The amount of open PRs/issues: ${{ steps.display-github-issues-and-pull-requests.outputs.open-pull-requests }} / ${{ steps.display-github-issues-and-pull-requests.outputs.open-issues }}"
+          echo "The amount of closed PRs/issues: ${{ steps.display-github-issues-and-pull-requests.outputs.closed-pull-requests }} / ${{ steps.display-github-issues-and-pull-requests.outputs.closed-issues }}"
+          echo "How many PRs/issues were opened in the last month: ${{ steps.display-github-issues-and-pull-requests.outputs.last-month-issues }} / ${{ steps.display-github-issues-and-pull-requests.outputs.last-month-pull-requests }}"
+          echo "Custom date for PRs/issues: ${{ steps.display-github-issues-and-pull-requests.outputs.custom-date-for-pull-requests }} / ${{ steps.display-github-issues-and-pull-requests.outputs.custom-date-for-issues }}"
